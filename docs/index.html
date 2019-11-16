@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="description" content="Description">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css">
+</head>
+<body>
+  <nav>
+    <a href="#/">EN</a>
+    <a href="#/测试">中文</a>
+  </nav>
+  <div id="app"></div>
+  <script>
+    window.$docsify = {
+      name: '测试文档编写',
+      repo: 'xinlingqudongX/TSDK',
+      loadNavbar:true,
+      coverpage:true,
+      loadSidebar:true,
+      auto2top:true,
+      themeColor:'#3F51B5',
+      autoHeader:true,
+      executeScript:true,
+      mergeNavbar:true,
+      formatUpdated:'{MM}/{DD} {HH}:{mm}',
+      notFoundPage:true,
+      search:{
+        maxAge:86400000,
+        paths:'auto',
+        placeholder:'测试搜索',
+        noData:'没找到数据',
+        depth:2,
+      },
+
+      plugins:[
+        function(hook){
+          let footer = `<hr/>
+          <footer>
+          <span><a>测试</a>&copy;2019.</span>
+          </footer>`;
+
+          hook.afterEach(html=>{
+            return html + footer
+          })
+        }
+      ]
+    }
+  </script>
+  <script>
+    if (navigator.serviceWorker && navigator.serviceWorker.register){
+      navigator.serviceWorker.register('sw.js');
+    }
+  </script>
+  <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
+  <script src="//unpkg.com/docsify/lib/plugins/search.js"></script>
+  <script src="//unpkg.com/docsify/lib/plugins/emoji.js"></script>
+  <script src="//unpkg.com/docsify/lib/plugins/external-script.js"></script>
+  <script src="//unpkg.com/prismjs/components/prism-python.min.js"></script>
+  <script src="//unpkg.com/prismjs/components/prism-javascript.min.js"></script>
+</body>
+</html>
