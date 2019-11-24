@@ -16,8 +16,8 @@
   <div id="app"></div>
   <script>
     window.$docsify = {
-      name: '测试文档编写',
-      repo: 'xinlingqudongX/TSDK',
+      name: '我的第一个文档',
+      repo: 'xinlingqudongX',
       loadNavbar:true,
       coverpage:true,
       loadSidebar:true,
@@ -31,16 +31,21 @@
       search:{
         maxAge:86400000,
         paths:'auto',
-        placeholder:'测试搜索',
+        placeholder:'搜索文档',
         noData:'没找到数据',
         depth:2,
+      },
+      pageination:{
+        previousText:'上一章',
+        nextText:'下一章'
       },
 
       plugins:[
         function(hook){
+          let str = '道阻且长，人生路漫漫   ————';
           let footer = `<hr/>
           <footer>
-          <span><a>测试</a>&copy;2019.</span>
+          <span><a></a>${str}&copy;2019.</span>
           </footer>`;
 
           hook.afterEach(html=>{
