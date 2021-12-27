@@ -8,7 +8,7 @@ address_user是为了区分用户字段和其他表的用户字段
 | :----------- | :----------- | :----------- |
 | address_id   | int          | 主键自增     |
 | address_user | int          | 用户id       |
-| name         | varchar(255) | 收货人姓名   |
+| receipt_name | varchar(255) | 收货人姓名   |
 | phone        | varchar(255) | 收货人电话   |
 | province     | varchar(255) | 省份         |
 | city         | varchar(255) | 城市         |
@@ -25,8 +25,8 @@ address_user是为了区分用户字段和其他表的用户字段
 | user_id     | int          | 主键自增   |
 | username    | varchar(255) | 用户名     |
 | password    | varchar(255) | 密码       |
-| phone       | varchar(255) | 电话       |
-| email       | varchar(255) | 邮箱       |
+| user_phone  | varchar(255) | 电话       |
+| user_email  | varchar(255) | 邮箱       |
 | nickname    | varchar(255) | 昵称       |
 | avatar      | varchar(255) | 头像       |
 | is_login    | int          | 是否登录   |
@@ -113,17 +113,17 @@ address_user是为了区分用户字段和其他表的用户字段
 ---
 
 ####    商品分类表
-| 字段名称    | 类型           | 字段说明   |
-| :---------- | :------------- | :--------- |
-| category_id | int            | 主键自增   |
-| pid         | int            | 父级id     |
-| name        | varchar(255)   | 分类名称   |
-| sort        | int            | 排序       |
-| status      | int            | 分类状态   |
-| pids        | [varchar(255)] | 父级id列表 |
-| create_time | datetime       | 创建时间   |
-| update_time | datetime       | 更新时间   |
-| flag        | int            | 删除标志位 |
+| 字段名称      | 类型           | 字段说明   |
+| :------------ | :------------- | :--------- |
+| category_id   | int            | 主键自增   |
+| pid           | int            | 父级id     |
+| category_name | varchar(255)   | 分类名称   |
+| sort          | int            | 排序       |
+| status        | int            | 分类状态   |
+| pids          | [varchar(255)] | 父级id列表 |
+| create_time   | datetime       | 创建时间   |
+| update_time   | datetime       | 更新时间   |
+| flag          | int            | 删除标志位 |
 ---
 
 ####    商品SKU表
@@ -138,6 +138,27 @@ address_user是为了区分用户字段和其他表的用户字段
 | create_time | datetime     | 创建时间 |
 | update_time | datetime     | 更新时间 |
 | flag        | int          | 标志位   |
+---
+
+####    店铺表
+在容易混淆的字段添加上表的前缀
+| 字段名称      | 类型         | 字段说明   |
+| :------------ | :----------- | :--------- |
+| shop_id       | int          | 主键自增   |
+| shop_name     | varchar(255) | 店铺名称   |
+| shop_logo     | varchar(255) | 店铺logo   |
+| shop_desc     | varchar(255) | 店铺描述   |
+| shop_address  | varchar(255) | 店铺地址   |
+| shop_phone    | varchar(255) | 店铺电话   |
+| shop_email    | varchar(255) | 店铺邮箱   |
+| shop_status   | int          | 店铺状态   |
+| shop_type     | int          | 店铺类型   |
+| shop_category | int          | 店铺分类   |
+| qualification | varchar(255) | 资质证书   |
+| certificate   | varchar(255) | 认证证书   |
+| create_time   | datetime     | 创建时间   |
+| update_time   | datetime     | 更新时间   |
+| flag          | int          | 删除标志位 |
 ---
 
 ####    用户购物车表
@@ -192,10 +213,11 @@ address_user是为了区分用户字段和其他表的用户字段
 ---
 
 ####    配置表
+在容易混淆的字段添加上表的前缀
 | 字段名称    | 类型         | 字段说明 |
 | :---------- | :----------- | :------- |
 | config_id   | int          | 主键自增 |
-| name        | varchar(255) | 配置名称 |
+| config_name | varchar(255) | 配置名称 |
 | value       | varchar(255) | 配置值   |
 | key_index   | varchar(255) | 配置键   |
 | create_time | datetime     | 创建时间 |
