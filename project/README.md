@@ -118,6 +118,7 @@ address_user是为了区分用户字段和其他表的用户字段
 | category_id   | int            | 主键自增   |
 | pid           | int            | 父级id     |
 | category_name | varchar(255)   | 分类名称   |
+|icon           | varchar(255)   | 分类图标   |
 | sort          | int            | 排序       |
 | status        | int            | 分类状态   |
 | pids          | [varchar(255)] | 父级id列表 |
