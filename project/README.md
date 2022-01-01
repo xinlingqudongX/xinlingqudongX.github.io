@@ -39,7 +39,23 @@ address_user是为了区分用户字段和其他表的用户字段
 | create_time | datetime     | 创建时间   |
 | update_time | datetime     | 更新时间   |
 | status      | int          | 状态       |
+---
 
+####    用户信息表
+存放用户信息，还有用户的额外信息
+| 字段名称      | 类型         | 字段说明           |
+| :------------ | :----------- | :----------------- |
+| user_id       | int          | 关联用户表的用户id |
+| constellation | varchar(255) | 星座               |
+| height        | int          | 身高               |
+| weight        | int          | 体重               |
+| education     | varchar(255) | 学历               |
+| marriage      | varchar(255) | 婚姻               |
+| hometown      | varchar(255) | 家乡               |
+| job           | varchar(255) | 职业               |
+| create_time   | datetime     | 创建时间           |
+| update_time   | datetime     | 更新时间           |
+| status        | int          | 状态               |
 ---
 ####    订单表
 订单信息,包含支付信息，用户信息，商品信息
@@ -118,7 +134,7 @@ address_user是为了区分用户字段和其他表的用户字段
 | category_id   | int            | 主键自增   |
 | pid           | int            | 父级id     |
 | category_name | varchar(255)   | 分类名称   |
-|icon           | varchar(255)   | 分类图标   |
+| icon          | varchar(255)   | 分类图标   |
 | sort          | int            | 排序       |
 | status        | int            | 分类状态   |
 | pids          | [varchar(255)] | 父级id列表 |
